@@ -17,6 +17,7 @@ const createFile = async (usersToSuspend) => {
 			console.log('File does not exist. Remove action failed.')
 			console.log('Creating new file...')
 			try {
+				/* save contents to file */
 				await append('./functions/usersToSuspend.js', JSON.stringify({ usersToSuspend }, null, 2))
 				console.log('usersToSuspend.js file created successfully')
 			} catch (error) {
