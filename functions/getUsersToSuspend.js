@@ -1,10 +1,11 @@
 require('dotenv').config()
 const get = require('axios').get
 
-const getInactiveUsers = async () => {
+const getUsersToSuspend = async () => {
 	try {
 		let users = []
 		let after = ''
+		const cutoffDate = '2018-06-01'
 		while (true) {
 			/* get the 'after' parameter from link and the users list from data */
 			const { headers: { link }, data } = await get(
@@ -26,11 +27,11 @@ const getInactiveUsers = async () => {
 				break
 		}
 		console.log('finished fetching users')
-		/* return the users that didn't login over the past 5 months */
-		return users.filter( ({ lastLogin }) => lastLogin < '2018-06-01' )
+		/* return the users whose last login is before the cut-off date */
+		return users.filter( ({ lastLogin }) => lastLogin < cutoffDate )
 	} catch (error) {
 		console.log(error)
 	}
 }
 
-module.exports = getInactiveUsers
+module.exports = getUsersToSuspend

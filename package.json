@@ -1,12 +1,12 @@
 {
   "name": "okta-users",
   "version": "1.0.0",
-  "description": "Get all users from Okta's database",
-  "main": "getUsers.js",
+  "description": "Get all users from Okta's database to identify potential ones to suspend",
+  "repository": "https://github.com/ziro-app/okta-users.git",
   "scripts": {
-    "get": "node index"
+    "get": "node ./functions/get",
+    "suspend": "node ./functions/suspend"
   },
-  "keywords": [],
   "author": "Vitor Barbosa",
   "license": "ISC",
   "dependencies": {
