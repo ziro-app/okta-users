@@ -25,7 +25,7 @@ const getInactiveUsers = async () => {
 			if (!link.includes('rel="next"'))
 				break
 		}
-		console.log('end')
+		console.log('finished fetching users')
 		/* return the users that didn't login over the past 5 months */
 		return users.filter( ({ lastLogin }) => lastLogin < '2018-06-01' )
 	} catch (error) {

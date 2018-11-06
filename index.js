@@ -1,9 +1,10 @@
 const getInactiveUsers = require('./functions/getInactiveUsers')
+const createInactivesFile = require('./functions/createInactivesFile')
 
 const getInactiveUsersAndSuspend = async () => {
 	try {
-		const inactive = await getInactiveUsers()
-		console.log(inactive)
+		const inactives = await getInactiveUsers()
+		await createInactivesFile(inactives)
 	} catch (error) {
 		console.log(error)
 	}
