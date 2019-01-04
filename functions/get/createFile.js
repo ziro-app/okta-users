@@ -5,21 +5,21 @@ const unlink = require('fs').unlink
 const append = promisify(appendFile)
 const remove = promisify(unlink)
 
-const createFile = async (usersToSuspend) => {
+const createFile = async (users) => {
 	try {
-		/* remove any existing file named 'usersToSuspend.js' */
-		await remove('./functions/usersToSuspend.js')
-		/* save the usersToSuspend object to 'usersToSuspend.js' */
-		await append('./functions/usersToSuspend.js', JSON.stringify({ usersToSuspend }, null, 2))
-		console.log('usersToSuspend.js file created successfully')
+		/* remove any existing file named 'users.js' */
+		await remove('./functions/users.js')
+		/* save the users object to 'users.js' */
+		await append('./functions/users.js', JSON.stringify({ users }, null, 2))
+		console.log('users.js file created successfully')
 	} catch (error) {
 		if (error.code === 'ENOENT') {
 			console.log('File does not exist. Remove action failed.')
 			console.log('Creating new file...')
 			try {
 				/* save contents to file */
-				await append('./functions/usersToSuspend.js', JSON.stringify({ usersToSuspend }, null, 2))
-				console.log('usersToSuspend.js file created successfully')
+				await append('./functions/users.js', JSON.stringify({ users }, null, 2))
+				console.log('users.js file created successfully')
 			} catch (error) {
 				console.log(error)
 			}

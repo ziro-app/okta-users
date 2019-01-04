@@ -4,7 +4,7 @@
   "description": "Get all users from Okta's database to identify potential ones to suspend",
   "repository": "https://github.com/ziro-app/okta-users.git",
   "scripts": {
-    "get": "node ./functions/get",
+    "get": "node ./functions/get/index",
     "suspend": "node ./functions/suspend"
   },
   "author": "Vitor Barbosa",

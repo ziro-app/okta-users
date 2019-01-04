@@ -1,7 +1,7 @@
 require('dotenv').config()
 const get = require('axios').get
 
-const getUsersToSuspend = async () => {
+const getUsers = async () => {
 	try {
 		let users = []
 		let after = ''
@@ -34,4 +34,4 @@ const getUsersToSuspend = async () => {
 	}
 }
 
-module.exports = getUsersToSuspend
+module.exports = getUsers
