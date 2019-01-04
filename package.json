@@ -5,7 +5,8 @@
   "repository": "https://github.com/ziro-app/okta-users.git",
   "scripts": {
     "get": "node ./functions/get/index",
-    "deactivate": "node ./functions/deactivate/index"
+    "deactivate": "node ./functions/deactivate/index",
+    "delete": "node ./functions/delete/index"
   },
   "author": "Vitor Barbosa",
   "license": "ISC",
