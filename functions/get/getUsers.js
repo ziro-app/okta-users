@@ -5,7 +5,7 @@ const getUsers = async () => {
 	try {
 		let users = []
 		let after = ''
-		const cutoffDate = '2018-05-01'
+		const cutoffDate = '2019-01-01'
 		while (true) {
 			/* get the 'after' parameter from link and the users list from data */
 			const { headers: { link }, data } = await get(
