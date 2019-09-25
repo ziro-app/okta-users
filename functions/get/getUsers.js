@@ -5,7 +5,7 @@ const getUsers = async () => {
 	try {
 		let users = []
 		let after = ''
-		const cutoffDate = '2019-01-01'
+		const cutoffDate = '2019-04-01'
 		while (true) {
 			/* get the 'after' parameter from link and the users list from data */
 			const { headers: { link }, data } = await get(
@@ -22,7 +22,7 @@ const getUsers = async () => {
 			/* get the 'after' parameter to allow pagination and access the whole database */
 			if (link)
 				after = link.split('?after=').pop().split('&limit=').shift()
-			/* if there is no more pages left, break the loop */
+			/* if there are no more pages left, break the loop */
 			if (!link.includes('rel="next"'))
 				break
 		}
