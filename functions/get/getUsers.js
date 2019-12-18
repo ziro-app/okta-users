@@ -5,7 +5,7 @@ const getUsers = async () => {
 	try {
 		let users = []
 		let after = ''
-		const cutoffDate = '2019-04-01'
+		const cutoffDate = '2019-10-01' // remove vitorbarbosa19@gmail.com from users file
 		while (true) {
 			/* get the 'after' parameter from link and the users list from data */
 			const { headers: { link }, data } = await get(
